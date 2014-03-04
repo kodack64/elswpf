@@ -14,22 +14,29 @@
                     </Grid.RowDefinitions>
                     <ScrollViewer HorizontalScrollBarVisibility="Auto">
                         <StackPanel Grid.Row="0" Orientation="Horizontal" >
-                            <RadioButton Style="{StaticResource {x:Type ToggleButton}}" Content="1" FontSize="20" Margin="5" GroupName="Regist" IsChecked="True"/>
-                            <RadioButton Style="{StaticResource {x:Type ToggleButton}}" Content="2" FontSize="20" Margin="5" GroupName="Regist"/>
-                            <RadioButton Style="{StaticResource {x:Type ToggleButton}}" Content="3" FontSize="20" Margin="5" GroupName="Regist"/>
-                            <RadioButton Style="{StaticResource {x:Type ToggleButton}}" Content="4" FontSize="20" Margin="5" GroupName="Regist"/>
-                            <RadioButton Style="{StaticResource {x:Type ToggleButton}}" Content="5" FontSize="20" Margin="5" GroupName="Regist"/>
-                            <RadioButton Style="{StaticResource {x:Type ToggleButton}}" Content="6" FontSize="20" Margin="5" GroupName="Regist"/>
-                            <RadioButton Style="{StaticResource {x:Type ToggleButton}}" Content="7" FontSize="20" Margin="5" GroupName="Regist"/>
-                            <RadioButton Style="{StaticResource {x:Type ToggleButton}}" Content="8" FontSize="20" Margin="5" GroupName="Regist"/>
-                            <RadioButton Style="{StaticResource {x:Type ToggleButton}}" Content="9" FontSize="20" Margin="5" GroupName="Regist"/>
-                            <RadioButton Style="{StaticResource {x:Type ToggleButton}}" Content="10" FontSize="20" Margin="5" GroupName="Regist"/>
-                            <RadioButton Style="{StaticResource {x:Type ToggleButton}}" Content="11" FontSize="20" Margin="5" GroupName="Regist"/>
-                            <RadioButton Style="{StaticResource {x:Type ToggleButton}}" Content="12" FontSize="20" Margin="5" GroupName="Regist"/>
-                            <RadioButton Style="{StaticResource {x:Type ToggleButton}}" Content="13" FontSize="20" Margin="5" GroupName="Regist"/>
-                            <RadioButton Style="{StaticResource {x:Type ToggleButton}}" Content="14" FontSize="20" Margin="5" GroupName="Regist"/>
-                            <RadioButton Style="{StaticResource {x:Type ToggleButton}}" Content="15" FontSize="20" Margin="5" GroupName="Regist"/>
-                            <RadioButton Style="{StaticResource {x:Type ToggleButton}}" Content="16" FontSize="20" Margin="5" GroupName="Regist"/>
+                            <StackPanel.Resources>
+                                <Style x:Key="MyRadioButton" TargetType="RadioButton" BasedOn="{StaticResource {x:Type ToggleButton}}">
+                                    <Setter Property="FontSize" Value="20"/>
+                                    <Setter Property="GroupName" Value="Regist"/>
+                                    <Setter Property="Margin" Value="5"/>
+                                </Style>
+                            </StackPanel.Resources>
+                            <RadioButton Style="{StaticResource MyRadioButton}"  Content="1" IsChecked="True"/>
+                            <RadioButton Style="{StaticResource MyRadioButton}"  Content="2"/>
+                            <RadioButton Style="{StaticResource MyRadioButton}"  Content="3"/>
+                            <RadioButton Style="{StaticResource MyRadioButton}"  Content="4"/>
+                            <RadioButton Style="{StaticResource MyRadioButton}"  Content="5"/>
+                            <RadioButton Style="{StaticResource MyRadioButton}"  Content="6"/>
+                            <RadioButton Style="{StaticResource MyRadioButton}"  Content="7"/>
+                            <RadioButton Style="{StaticResource MyRadioButton}"  Content="8"/>
+                            <RadioButton Style="{StaticResource MyRadioButton}"  Content="9"/>
+                            <RadioButton Style="{StaticResource MyRadioButton}"  Content="10"/>
+                            <RadioButton Style="{StaticResource MyRadioButton}"  Content="11"/>
+                            <RadioButton Style="{StaticResource MyRadioButton}"  Content="12"/>
+                            <RadioButton Style="{StaticResource MyRadioButton}"  Content="13"/>
+                            <RadioButton Style="{StaticResource MyRadioButton}"  Content="14"/>
+                            <RadioButton Style="{StaticResource MyRadioButton}"  Content="15"/>
+                            <RadioButton Style="{StaticResource MyRadioButton}"  Content="16"/>
                         </StackPanel>
                     </ScrollViewer>
                     <Grid Grid.Row="1">
@@ -39,15 +46,20 @@
                         </Grid.ColumnDefinitions>
                         <ScrollViewer HorizontalScrollBarVisibility="Disabled">
                             <StackPanel>
+                                <StackPanel.Resources>
+                                    <Style TargetType="ListBoxItem">
+                                        <Setter Property="Margin" Value="5"/>
+                                    </Style>
+                                </StackPanel.Resources>
                                 <ListBox FontSize="24" Margin="5">
-                                    <ListBoxItem Margin="5">UpperVoice1</ListBoxItem>
-                                    <ListBoxItem Margin="5">UpperVoice2</ListBoxItem>
-                                    <ListBoxItem Margin="5">LowerVoice1</ListBoxItem>
-                                    <ListBoxItem Margin="5">LowerVoice2</ListBoxItem>
-                                    <ListBoxItem Margin="5">LeadVoice1</ListBoxItem>
-                                    <ListBoxItem Margin="5">LeadVoice2</ListBoxItem>
-                                    <ListBoxItem Margin="5">PedalVoice1</ListBoxItem>
-                                    <ListBoxItem Margin="5">PedalVoice2</ListBoxItem>
+                                    <ListBoxItem  IsSelected="True">UpperVoice1</ListBoxItem>
+                                    <ListBoxItem >UpperVoice2</ListBoxItem>
+                                    <ListBoxItem >LowerVoice1</ListBoxItem>
+                                    <ListBoxItem >LowerVoice2</ListBoxItem>
+                                    <ListBoxItem >LeadVoice1</ListBoxItem>
+                                    <ListBoxItem >LeadVoice2</ListBoxItem>
+                                    <ListBoxItem >PedalVoice1</ListBoxItem>
+                                    <ListBoxItem >PedalVoice2</ListBoxItem>
                                 </ListBox>
                             </StackPanel>
                         </ScrollViewer>
@@ -64,7 +76,7 @@
                                     <Grid>
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="80"/>
-                                            <RowDefinition Height="100"/>
+                                            <RowDefinition Height="160"/>
                                             <RowDefinition/>
                                             <RowDefinition/>
                                             <RowDefinition/>
@@ -83,7 +95,7 @@
                                             <Label VerticalAlignment="Center" Content="Choose Chamber" FontSize="20"/>
                                         </StackPanel>
                                         <StackPanel Grid.Row="1" Orientation="Horizontal">
-                                            <StackPanel>
+                                            <StackPanel Width="50">
                                                 <Label Content="Mute" HorizontalAlignment="Center"/>
                                                 <Label Content="Off" HorizontalAlignment="Center"/>
                                                 <metro:DropDownCommandButton
@@ -97,25 +109,40 @@
                                     OriginX="0" OriginY="20"/>
                                                 </metro:DropDownCommandButton>
                                             </StackPanel>
-                                            <StackPanel>
+                                            <StackPanel Width="50">
                                                 <Label Content="Volume" HorizontalAlignment="Center"/>
-                                                <TextBox Text="0" HorizontalAlignment="Center"/>
-                                                <Slider Orientation="Vertical" Height="50" Value="0" Minimum="0" Maximum="127" TickFrequency="1" IsSnapToTickEnabled="True"/>
+                                                <TextBox Text="{Binding volume,Mode=TwoWay}" HorizontalAlignment="Center"/>
+                                                <Slider Value="{Binding volume,Mode=TwoWay}" Orientation="Vertical" Height="50"  Minimum="0" Maximum="127" TickFrequency="1" IsSnapToTickEnabled="True"/>
                                             </StackPanel>
-                                            <StackPanel>
+                                            <StackPanel Width="50">
                                                 <Label Content="Reverb" HorizontalAlignment="Center"/>
                                                 <TextBox Text="0" HorizontalAlignment="Center"/>
                                                 <Slider Orientation="Vertical" Height="50" Value="0" Minimum="0" Maximum="127" TickFrequency="1" IsSnapToTickEnabled="True"/>
                                             </StackPanel>
-                                            <StackPanel>
+                                            <StackPanel Width="50">
                                                 <Label Content="Brilliance" HorizontalAlignment="Center"/>
                                                 <TextBox Text="0" HorizontalAlignment="Center"/>
                                                 <Slider Orientation="Vertical" Height="50" Value="64" Minimum="0" Maximum="127" TickFrequency="1" IsSnapToTickEnabled="True"/>
                                             </StackPanel>
-                                            <StackPanel>
+                                            <StackPanel Width="50">
                                                 <Label Content="Feet" HorizontalAlignment="Center"/>
                                                 <TextBox Text="0" HorizontalAlignment="Center"/>
-                                                <Slider Orientation="Vertical" Height="50" Value="64" Minimum="0" Maximum="4" TickFrequency="1" IsSnapToTickEnabled="True"/>
+                                                <Slider Orientation="Vertical" Height="50" Value="0" Minimum="0" Maximum="4" TickFrequency="1" IsSnapToTickEnabled="True"/>
+                                            </StackPanel>
+                                            <StackPanel Width="50">
+                                                <Label Content="Pan" HorizontalAlignment="Center"/>
+                                                <TextBox Text="0" HorizontalAlignment="Center"/>
+                                                <Slider Orientation="Vertical" Height="50" Value="64" Minimum="0" Maximum="127" TickFrequency="1" IsSnapToTickEnabled="True"/>
+                                            </StackPanel>
+                                            <StackPanel Width="50">
+                                                <Label Content="Int.Touch" HorizontalAlignment="Center"/>
+                                                <TextBox Text="0" HorizontalAlignment="Center"/>
+                                                <Slider Orientation="Vertical" Height="50" Value="64" Minimum="0" Maximum="127" TickFrequency="1" IsSnapToTickEnabled="True"/>
+                                            </StackPanel>
+                                            <StackPanel Width="50">
+                                                <Label Content="Aft.Touch" HorizontalAlignment="Center"/>
+                                                <TextBox Text="0" HorizontalAlignment="Center"/>
+                                                <Slider Orientation="Vertical" Height="50" Value="64" Minimum="0" Maximum="127" TickFrequency="1" IsSnapToTickEnabled="True"/>
                                             </StackPanel>
                                         </StackPanel>
                                     </Grid>
